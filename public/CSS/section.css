@@ -1,63 +1,46 @@
 .bg {
-    animation:slide 3s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, rgb(233, 118, 51) 60%,rgb(22, 36, 238) 80%);
-    bottom:0;
-    left:-50%;
-    opacity:.5;
-    position:fixed;
-    right:-50%;
-    top:0;
-    z-index:-1;
-  }
-
-  .bg2 {
-    animation-direction:alternate-reverse;
-    animation-duration:4s;
-  }
-
-  .bg3 {
-    animation-duration:5s;
-  }
-
-  .content {
-    background-color:rgba(255,255,255,.8);
-    border-radius:.25em;
-    box-shadow:0 0 .25em rgba(0,0,0,.25);
-    box-sizing:border-box;
-    left:50%;
-    padding:10vmin;
-    position:fixed;
-    text-align:center;
-    top:50%;
-    transform:translate(-50%, -50%);
-  }
-
-  h1 {
-    font-family:monospace;
-  }
-
-  @keyframes slide {
-    0% {
-      transform:translateX(-25%);
+        animation:slide 3s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+        bottom:0;
+        left:-50%;
+        opacity:.5;
+        position:fixed;
+        right:-50%;
+        top:0;
+        z-index:-1;
     }
-    100% {
-      transform:translateX(25%);
+
+      .bg2 {
+        animation-direction:alternate-reverse;
+        animation-duration:4s;
+      }
+
+      .bg3 {
+        animation-duration:5s;
+      }
+
+      .content {
+        background-color:rgba(255,255,255,.8);
+        border-radius:.25em;
+        box-shadow:0 0 .25em rgba(0,0,0,.25);
+        box-sizing:border-box;
+        left:50%;
+        padding:10vmin;
+        position:fixed;
+        text-align:center;
+        top:50%;
+        transform:translate(-50%, -50%);
+      }
+
+      h1 {
+        font-family:monospace;
+      }
+
+      @keyframes slide {
+        0% {
+          transform:translateX(-25%);
+        }
+        100% {
+          transform:translateX(25%);
+        }
     }
-  }
-  .headPara{
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-  /* SECTIONS */
-
-  .headline {
-    width: 100%;
-    height: 50vh;
-    min-height: 350px;
-    background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.7)), url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/jPLiQ-9/mountains-background-for-titles-intro-projects-and-etc_ew22rur3l__F0000.png');
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
