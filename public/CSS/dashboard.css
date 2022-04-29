@@ -489,11 +489,11 @@ td .status{
 }
 
 #nav-toggle:checked+.sidebar {
-    width: 70px;
+    width: 100px;
 }
 
 #nav-toggle:checked+.sidebar {
-    width: 70px;
+    width: 100px;
 }
 
 #nav-toggle:checked+.sidebar .sidebar-brand,
