@@ -17,6 +17,8 @@ Users List
         {{ Session::get('fail') }}
     </div>
     @endif
+    <div class="table-responsive">
+
     <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr style="background: rgb(230, 161, 32);">
@@ -46,6 +48,7 @@ Users List
         </tbody>
 
     </table>
+    </div>
 </div>
 <script>
     $(document).ready(function() {
