@@ -94,7 +94,12 @@ Route::get('/resetpassword/{token?}', [UserController::class, '_showResetForm'])
 
 Route::post('/resetpassword', [UserController::class, '_resetForm'])->name('resetpassword');
 
-
+Route::get('/dashboard',function(){
+    return view('dashboard');
+});
+Route::get('detail',function(){
+    return view('Users.demo');
+});
 
 
 
