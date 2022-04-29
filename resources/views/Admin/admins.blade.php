@@ -7,6 +7,8 @@ Admins List
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
 <div class="container">
+    <h1 style="text-align: center; color:navy">Admins Details</h1>
+    <br>
     @if(Session::has('success'))
     <div class="alert alert-success" role="alert">
         {{ Session::get('success') }}

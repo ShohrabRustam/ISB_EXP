@@ -17,6 +17,7 @@ Users List
         {{ Session::get('fail') }}
     </div>
     @endif
+    <h1 style="text-align: center; color:navy">Users Details</h1>
     <div class="table-responsive">
 
         <table id="example" class="table table-striped table-bordered" style="width:100%">

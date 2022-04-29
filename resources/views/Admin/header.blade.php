@@ -16,7 +16,7 @@
         <img src="https://w7.pngwing.com/pngs/831/88/png-transparent-user-profile-computer-icons-user-interface-mystique-miscellaneous-user-interface-design-smile-thumbnail.png"
             alt="user" style="width: 25px; height:25px">
 
-        <a href="{{ URL::to('/logout') }}" style="color: black">
+        <a href="{{ URL::to('/adminLogout') }}" style="color: black">
             <button type="button" class="btn btn-primary">Logout</button>
         </a>
     </div>
