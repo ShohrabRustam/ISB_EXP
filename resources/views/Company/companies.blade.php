@@ -4,6 +4,7 @@ Companies
 @endsection
 
 @section('section')
+@include('Company.style')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
 <div class="container">
