@@ -67,7 +67,7 @@
           </a>
         </li> --}}
         <li>
-            <a href="#" class="active"><span class="fa fa-home"></span>
+            <a href="#" ><span class="fa fa-home"></span>
                 <span>Home</span>
             </a>
         </li>
@@ -92,6 +92,16 @@
             </a>
         </li>
       </ul>
+      <script>
+        const currentLocation=location.href;
+        const menuItem = document.querySelectorAll('a');
+        const menuLength = menuItem.length
+        for(let i=0;i<menuLength;i++){
+            if(menuItem[i].href===currentLocation){
+                menuItem[i].className = 'active';
+            }
+        }
+    </script>
 
     </div>
 </div>

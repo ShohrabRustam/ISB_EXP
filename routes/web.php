@@ -97,9 +97,6 @@ Route::post('/resetpassword', [UserController::class, '_resetForm'])->name('rese
 Route::get('/dashboard',function(){
     return view('dashboard');
 });
-Route::get('detail',function(){
-    return view('Users.demo');
-});
 
 
 
