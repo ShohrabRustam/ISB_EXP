@@ -50,7 +50,12 @@
 
 <div class="sidebar">
     <div class="sidebar-brand">
-        <h2><span id="kleenpulse">mPolicy</span></h2>
+        <h2><span id="kleenpulse"  style="    text-transform: uppercase;
+            background: linear-gradient(-140deg, rgb(238, 8, 8), rgb(0, 47, 255), #0aee56, #120ee4, #0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: anime 6s linear infinite;">mPolicy</span></h2>
     </div>
 
     <div class="sidebar-menu">
@@ -68,22 +73,22 @@
         </li>
         <li>
             <a href="#"><span class="fas fa-user-md	"></span>
-                <span>Health Insurance</span>
+                <span>Health Insur</span>
             </a>
         </li>
         <li>
             <a href="#"><span class="fas fa-heartbeat"></span>
-                <span>Life Insurance</span>
+                <span>Life Insur</span>
             </a>
         </li>
         <li>
             <a href="#"><span class="fa fa-motorcycle"></span>
-                <span>Bike Insurance</span>
+                <span>Bike Insur</span>
             </a>
         </li>
         <li>
             <a href="#"><span class="fas fa-car	"></span>
-                <span>Car Insurance </span>
+                <span>Car Insur</span>
             </a>
         </li>
       </ul>

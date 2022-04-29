@@ -12,7 +12,7 @@ let welcome;
     }
     if (hour>=0 && hour<12) {
       welcome = "Morning";
-    } else if (hour == 12) {
+    } else if (hour == 12 && minute<1 ) {
       welcome = "Noon";
     }
     else if (hour >= 12 && hour <= 17) {
@@ -63,7 +63,7 @@ let welcome;
 // 	}
 
 $('#dashboard').mouseenter(function(){
-    		this.innerHTML = `good
+    		this.innerHTML = `Good
         ${welcome}`;
     	});
     	$('#dashboard').mouseleave(function(){
