@@ -26,7 +26,7 @@
     <h2> <label for="nav-toggle">
         <span class="fas fa-bars"></span>
       </label>
-      Dashboard
+      <h1 id="dashboard">Dashboard</h1>
     </h2>
 
     {{-- <div class="search-wrapper">
