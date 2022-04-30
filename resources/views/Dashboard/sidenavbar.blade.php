@@ -67,28 +67,28 @@
           </a>
         </li> --}}
         <li>
-            <a href="#" ><span class="fa fa-home"></span>
+            <a href="{{ URL::to('/dashboard') }}" ><span class="fa fa-home"></span>
                 <span>Home</span>
             </a>
         </li>
         <li>
-            <a href="#"><span class="fas fa-user-md	"></span>
-                <span>Health Insur</span>
+            <a href="{{ URL::to('/healthPolicy') }}"><span class="fas fa-user-md	"></span>
+                <span>Health Insururance</span>
             </a>
         </li>
         <li>
-            <a href="#"><span class="fas fa-heartbeat"></span>
-                <span>Life Insur</span>
+            <a href="{{ URL::to('/lifePolicy') }}"><span class="fas fa-heartbeat"></span>
+                <span>Life Insurance</span>
             </a>
         </li>
         <li>
-            <a href="#"><span class="fa fa-motorcycle"></span>
-                <span>Bike Insur</span>
+            <a href="{{ URL::to('/bikePolicy') }}"><span class="fa fa-motorcycle"></span>
+                <span>Bike Insururance</span>
             </a>
         </li>
         <li>
-            <a href="#"><span class="fas fa-car	"></span>
-                <span>Car Insur</span>
+            <a href=" {{ URL::to('/carPolicy') }}"><span class="fas fa-car	"></span>
+                <span>Car Insururance</span>
             </a>
         </li>
       </ul>

@@ -8,6 +8,7 @@ use App\Http\Controllers\HelpController;
 use App\Http\Controllers\InsuranceController;
 use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserDashboard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -96,10 +97,11 @@ Route::get('/resetpassword/{token?}', [UserController::class, '_showResetForm'])
 
 Route::post('/resetpassword', [UserController::class, '_resetForm'])->name('resetpassword');
 
-Route::get('/dashboard',function(){
-    return view('Dashboard.dashboard');
-});
-
+Route::get('/dashboard',[UserDashboard::class,'_home']);
+Route::get('/healthPolicy',[UserDashboard::class,'_health']);
+Route::get('/lifePolicy',[UserDashboard::class,'_life']);
+Route::get('/bikePolicy',[UserDashboard::class,'_bike']);
+Route::get('/carPolicy',[UserDashboard::class,'_car']);
 
 
 
