@@ -14,8 +14,9 @@ Bike Insurace
             <td> Claim Price : {{  $policy['c_price'] }} </td>
             <td> Policy Period :  {{ $policy['policy_period'] }} </td>
             <td><div class="d-grid gap-2 d-md-block">
-                <button class="btn btn-primary" type="button">View Details</button>
-                <button class="btn btn-primary" type="button">Buy</button>
+                <a href="viewPolicy/{{ $policy['id'] }}">  <button class="btn btn-primary" type="button">View Details</button></a>
+                <a href="#">  <button class="btn btn-primary" type="button">Buy</button></a>
+
             </div></td>
         </tr>
             @endforeach

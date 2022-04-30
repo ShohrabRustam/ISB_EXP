@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 
 class CompanyPolicyController extends Controller
-{    //
-
+{
     public function _addPolicy($id)
     {
         $company = Company::find($id);
@@ -149,4 +148,13 @@ class CompanyPolicyController extends Controller
     }
 
 
+    public function _viewPolicy($id){
+        $policy= CompanyPolicy::find($id);
+        $company= Company::find($policy['companyid']);
+        if(Session::has('user')){
+        return view('Company.viewPolicy')->with('policy',$policy)->with('company',$company);
+        }else{
+            return redirect('login');
+        }
+    }
 }

@@ -104,6 +104,8 @@ Route::get('/bikePolicy',[UserDashboard::class,'_bike']);
 Route::get('/carPolicy',[UserDashboard::class,'_car']);
 
 
+Route::get('viewPolicy/{id?}',[CompanyPolicyController::class,'_viewPolicy']);
+
 
 
 
