@@ -267,5 +267,6 @@
     </main>
     <script src="JS/dashboard.js"></script>
     </div>
+    @include('Dashboard.footer')
 
 </html>
