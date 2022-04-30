@@ -32,6 +32,11 @@
                     <span>Companies</span>
                 </a>
             </li>
+            <li>
+                <a href="{{ URL::to('/helpMessage') }}"><span class="fa fa-question-circle"></span>
+                    <span>Help</span>
+                </a>
+            </li>
         </ul>
         @endif
 

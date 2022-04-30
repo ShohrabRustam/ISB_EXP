@@ -60,6 +60,7 @@ class AdminController extends Controller
             'password' => 'required|min:6',
             'confirm_password' => 'required_with:password|same:password|min:6'
         ]);
+
         $user = new Admin();
         $user->name = $request->name;
         $user->email = $request->email;

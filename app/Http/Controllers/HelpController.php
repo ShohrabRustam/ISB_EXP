@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\help;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class HelpController extends Controller
 {
@@ -26,4 +27,13 @@ class HelpController extends Controller
        }
         return back()->with('fail',"Ohoo, Something wrong ");
     }
+
+    public function _helpMessage(){
+        $helps = help::all();
+        if (Session::has('user') && (Session::get('user')['type'] == 'superadmin' || Session::get('user')['type'] == 'admin' )) {
+        return view('Admin.help')->with('helps',$helps);
+    }else{
+        return redirect('/adminlogin');
+    }
+}
 }

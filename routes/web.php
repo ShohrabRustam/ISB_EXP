@@ -26,6 +26,8 @@ Route::get('/contact', [UserController::class, '_contact']);
 Route::get('/about', [UserController::class, '_about']);
 Route::get('/help', [UserController::class, '_help']);
 Route::post('/help', [HelpController::class, '_help'])->name('help');
+Route::get('/helpMessage', [HelpController::class, '_helpMessage'])->name('help');
+
 Route::get('/signup', [UserController::class, '_signupPage'])->middleware('userLogin');
 Route::post('/signup', [UserController::class, '_signup'])->name('signup');
 Route::get('/login', [UserController::class, '_loginPage'])->middleware('userLogin');
