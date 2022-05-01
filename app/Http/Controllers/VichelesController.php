@@ -62,7 +62,6 @@ class VichelesController extends Controller
         $risk = $request->service  + $request->damage + $age * 3;
         $data = $request->all();
         $request->session()->put('risk',$risk);
-        return Session::get('risk');
         $request->session()->put('vrisks',$data);
         return redirect('/');
         }

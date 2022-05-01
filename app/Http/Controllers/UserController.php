@@ -237,12 +237,14 @@ class UserController extends Controller
         if (Session::has('user')) {
             if (Session::get('user')['type'] === 'user') {
                 Session::forget('user');
+                Session::forget('risk');
                 Session::forget('risks');
                 Session::forget('vrisks');
                 return redirect('login');
             }
             if (Session::get('user')['type'] === 'admin') {
                 Session::forget('user');
+                Session::forget('risk');
                 Session::forget('risks');
                 Session::forget('vrisks');
                 return redirect('adminLogin');

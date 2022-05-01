@@ -11,8 +11,12 @@ class InsuranceController extends Controller
 
     public function _bike(){
         if(Session::has('user')){
+            if(Session::has('risk')){
             $policies = CompanyPolicy::where('policytype','Bike')->get();
         return view('Users.bikeInsurance')->with('policies',$policies);
+            }else{
+                return view('Users.riskVehicle');
+            }
         }else{
             return redirect('/login');
         }
@@ -20,8 +24,12 @@ class InsuranceController extends Controller
 
     public function _car(){
         if(Session::has('user')){
+            if(Session::has('risk')){
         $policies = CompanyPolicy::where('policytype','Car')->get();
         return view('Users.carInsurance')->with('policies',$policies);
+            }else{
+                return view('Users.riskVehicle');
+            }
         }
         else{
             return redirect('/login');
