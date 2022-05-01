@@ -10,6 +10,7 @@ use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserDashboard;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PurchaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,13 +105,14 @@ Route::get('/bikePolicy',[UserDashboard::class,'_bike']);
 Route::get('/carPolicy',[UserDashboard::class,'_car']);
 
 
-Route::get('viewPolicy/{id?}',[CompanyPolicyController::class,'_viewPolicy']);
+Route::get('viewPolicy/{id?}',[CompanyPolicyController::class,'_viewPolicy'])->name('viewPolicy');
 
 
+Route::get('/transaction',function(){
+    return view('transaction.transaction');
+});
 
-
-
-
+Route::post('purchasePolicy',[PurchaseController::class,'_purchasePolicy']);
 
 
 Route::fallback(function () {

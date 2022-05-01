@@ -49,10 +49,17 @@ View Policy
         <div style="float:right;"><i> {{ $policy['policy_period'] }} <strong> Months</strong></i></div>
     </li>
 
+    <form action="{{ URL::to('purchasePolicy') }}" method="POST">
+        @csrf
+        <input type="hidden" name="userid"  value="{{ Session::get('user')['id'] }}">
+        <input type="hidden" name="policyid"  value="{{ $policy['id'] }}">
+        <input type="hidden" name="p_price"  value="{{ $policy['p_price'] * ((100+Session::get('risks')) / 100) }}">
+        <input type="hidden" name="c_price"  value="{{  $policy['c_price'] }}">
+        <li class="list-group-item">
 
-    <li class="list-group-item">
-        <div style="float:right;"><a href="#"><button type="button" class="btn btn-primary" style="width: 100px">Buy</button></a></div>
-    </li>
+            <div style="float:right;"><button type="submit" class="btn btn-primary" style="width: 100px">Buy</button></div>
+        </li>
+    </form>
       {{-- <li class="list-group-item"> <strong>Policy Name : </strong> <i> {{ $policy['policyname'] }} </i></li>
       <li class="list-group-item"> <strong>Policy Desc : </strong> <i> {{ $policy['p_desc'] }} </i></li>
       <li class="list-group-item"> <strong>Policy Desc : </strong> <i> {{ $policy['p_desc'] }} </i></li>
