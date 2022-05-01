@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use App\Models\CompanyPolicy;
 use App\Models\Purchase;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
@@ -184,5 +186,22 @@ class AdminController extends Controller
         } else {
             return redirect('/adminLogin');
         }
+    }
+
+    public function _acceptRequest(Request $request){
+        $purchasePolicy = Purchase::find($request->id);
+        // return $purchasePolicy;'
+        $policy = CompanyPolicy::find($purchasePolicy['policyid']);
+        $purchasePolicy->expired_policy = Carbon::now()->addMonths($policy['policy_period']);
+        $purchasePolicy->status = " Request Accepted ";
+        $purchasePolicy->reason = "Successfully Varified ";
+        $response= $purchasePolicy->save();
+        if($response){
+            return redirect('/requestPage');
+        }else{
+            return back()->with('fail', 'something wrong');
+        }
+        // $purchasePolicy->status = "Varified ";
+
     }
 }

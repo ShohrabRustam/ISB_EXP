@@ -1,4 +1,4 @@
-@extends('SuperAdmin.master')
+@extends('Admin.master')
 @section('title')
 Request Page
 @endsection
@@ -36,8 +36,12 @@ Request Page
                     <td>{{ $purchase['p_price'] }}</td>
                     <td>{{ $purchase['c_price'] }}</td>
                     <td style="margin-left:5px">
-                        <a href="/accept/{{ $purchase['id'] }}" style="margin-right: 20px"><button class="btn btn-primary">Accept</button></a>
-                        <a href="/reject/{{ $purchase['id'] }}"><button class="btn btn-primary">Reject</button></a>
+                        <form action="{{ URL::to('acceptRequest')}}" method="POST">
+                            @csrf
+                            <input type="hidden"  name="id" value="{{  $purchase['id'] }}">
+                            <button class="btn btn-primary" type="submit">Accept</button>
+                        </form>
+                        <a href="/reject/{{ $purchase['id'] }}"><button class="btn btn-primary" style="margin-left: 20px">Reject</button></a>
 
                     </td>
 

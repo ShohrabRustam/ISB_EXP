@@ -79,7 +79,7 @@ Route::get('/adminsList', [AdminController::class, '_admins']);
 Route::get('/deleteAdmin/{id?}', [AdminController::class, '_delete']);
 Route::get('/updateAdmin/{id?}', [AdminController::class, '_updatePage'])->name('updateAdmin');
 Route::post('/updateAdmin/{id?}', [AdminController::class, '_update'])->name('updateAdmin');
-
+Route::post('/acceptRequest', [AdminController::class, '_acceptRequest'])->name('acceptRequest');
 
 Route::get('/superadminHome', [SuperAdminController::class, '_homeSuperadmin']);
 Route::post('/superadminLogin', [SuperAdminController::class, '_login'])->name('superadminLogin');
