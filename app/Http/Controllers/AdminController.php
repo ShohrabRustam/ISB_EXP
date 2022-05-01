@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\CompanyPolicy;
 use App\Models\Purchase;
+use App\Models\transaction;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -201,7 +202,21 @@ class AdminController extends Controller
         }else{
             return back()->with('fail', 'something wrong');
         }
-        // $purchasePolicy->status = "Varified ";
+    }
 
+    public function _rejectRequest($id){
+        if(Session::has('user') && (Session::get('user')['type']=='admin' || Session::get('user')['type']=='superadmin')){
+        $purchasePolicy = Purchase::find($id);
+        $purchasePolicy->status = " Request Rejected ";
+        $purchasePolicy->reason = "Have some issue in Documents, Money will be Return within 48 hours ";
+        $response= $purchasePolicy->save();
+        if($response){
+            return redirect('/requestPage');
+        }else{
+            return back()->with('fail', 'something wrong');
+        }
+    }else{
+        return redirect('/adminlogin');
+    }
     }
 }

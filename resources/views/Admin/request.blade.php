@@ -41,8 +41,7 @@ Request Page
                             <input type="hidden"  name="id" value="{{  $purchase['id'] }}">
                             <button class="btn btn-primary" type="submit">Accept</button>
                         </form>
-                        <a href="/reject/{{ $purchase['id'] }}"><button class="btn btn-primary" style="margin-left: 20px">Reject</button></a>
-
+                        <a href="/rejectRequest/{{ $purchase['id'] }}"><button class="btn btn-primary" style="margin-left: 20px">Reject</button></a>
                     </td>
 
                 </tr>
