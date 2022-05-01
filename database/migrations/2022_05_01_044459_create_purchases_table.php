@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('policyid');
             $table->foreign('policyid')->references('id')->on('company_policies');
             $table->integer('risk');
-            $table->integer('p_price');
+            $table->float('p_price');
             $table->integer('c_price');
             $table->string('status')->default('under verification');
             $table->string('reason');

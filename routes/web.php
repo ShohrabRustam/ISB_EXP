@@ -108,9 +108,9 @@ Route::get('/carPolicy',[UserDashboard::class,'_car']);
 Route::get('viewPolicy/{id?}',[CompanyPolicyController::class,'_viewPolicy'])->name('viewPolicy');
 
 
-Route::get('/transaction',function(){
-    return view('transaction.transaction');
-});
+// Route::get('/transaction',function(){
+//     return view('transaction.transaction');
+// });
 
 Route::post('purchasePolicy',[PurchaseController::class,'_purchasePolicy']);
 

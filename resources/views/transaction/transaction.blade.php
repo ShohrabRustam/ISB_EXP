@@ -39,10 +39,11 @@ transaction
   </style>
   <body>
     <div class="card">
+        <p class="payment-para">{{ $transactionid }}</p>
     <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
       <i class="checkmark">✓</i>
     </div>
-    <h2 class="payment">500</h2>
+    <h2 class="payment">{{ $price }}</h2>
       <h1 class="payment">Your Payment Success</h1>
       <p class="payment-para">We received your policy purchase request;<br/> we'll be in touch shortly!</p>
     </div>
