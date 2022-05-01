@@ -26,7 +26,7 @@ Bike Insurace
                 @foreach ($policies as $policy)
                 <tr>
                     <td>{{ $policy['policyname'] }}</td>
-                    <td>{{ $policy['p_price'] }}</td>
+                    <td>{{ $policy['p_price'] * ((100+ (Session::get('risk'))) / 100) }} Actual :{{  $policy['p_price'] }} </td>
                     <td>{{ $policy['c_price'] }}</td>
                     <td>{{ $policy['policy_period'] }}</td>
                     <td style="margin-left:5px;">
@@ -40,7 +40,7 @@ Bike Insurace
                             <input type="hidden" name="userid" value="{{ Session::get('user')['id'] }}">
                             <input type="hidden" name="policyid" value="{{ $policy['id'] }}">
                             <input type="hidden" name="p_price"
-                                value="{{ $policy['p_price'] * ((100+Session::get('risks')) / 100) }}">
+                                value="{{ $policy['p_price'] * ((100+Session::get('risk')) / 100) }}">
                             <input type="hidden" name="c_price" value="{{  $policy['c_price'] }}">
                             <button class="btn btn-primary" type="submit">Buy</button>
                         </form>

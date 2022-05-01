@@ -27,7 +27,7 @@ Health Insurace
                 @foreach ($policies as $policy)
                 <tr>
                     <td>{{ $policy['policyname'] }}</td>
-                    <td>{{ $policy['p_price'] }}</td>
+                    <td>{{ $policy['p_price'] * ((100+Session::get('risks')) / 100) }}</td>
                     <td>{{ $policy['c_price'] }}</td>
                     <td>{{ $policy['policy_period'] }}</td>
                     <td style="margin-left:5px;">

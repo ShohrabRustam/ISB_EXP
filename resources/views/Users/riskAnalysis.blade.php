@@ -110,7 +110,7 @@ Risk Analysis
                             <div class="row mb-1">
                                 <div class="col-lg-12">
                                     <input name="dob" class="form-control" type="date"
-                                        value="{{ old('policy_period') }}" required>
+                                        value="{{ old('dop') }}" required>
                                 </div>
                             </div>
                             <br>

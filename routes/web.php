@@ -11,6 +11,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserDashboard;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\VichelesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,8 +46,11 @@ Route::get('/lifeInsurance', [InsuranceController::class, '_life']);
 Route::get('/healthInsurance', [InsuranceController::class, '_health']);
 Route::get('/carInsurance', [InsuranceController::class, '_car']);
 Route::get('/bikeInsurance', [InsuranceController::class, '_bike']);
-Route::get('/riskAnalysis',[UserController::class,'_riskanalysis'])->name('riskAnalysis');
-Route::post('/riskAnalysis',[UserController::class,'_risk'])->name('riskAnalysis');
+Route::get('/riskAnalysis',[VichelesController::class,'_riskanalysis'])->name('riskAnalysis');
+Route::post('/riskAnalysis',[VichelesController::class,'_risk'])->name('riskAnalysis');
+Route::get('/riskAnalysisVehicle',[VichelesController::class,'_riskAnalysisVehicle'])->name('riskAnalysisVehicle');
+Route::post('/riskAnalysisVehicle',[VichelesController::class,'_riskvehicle'])->name('riskAnalysisVehicle');
+
 
 Route::get('/companies', [CompanyController::class, '_companies']);
 Route::get('/addCompany', [CompanyController::class, '_addCompany']);

@@ -31,10 +31,13 @@ View Policy
 
     </li>
 
-
     <li class="list-group-item">
         <div style="float:left;"><strong>Premimum Price :  </strong> </div>
-        <div style="float:right;"><i> {{ $policy['p_price'] * ((100+Session::get('risks')) / 100) }}</i></div>
+        @if(  $policy['policytype'] == 'Car' || $policy['policytype'] == 'Bike')
+        <div style="float:right;"><i> {{ $policy['p_price'] * ((100+Session::get('risk')) / 100) }}</i></div>
+            @else
+            <div style="float:right;"><i> {{ $policy['p_price'] * ((100+Session::get('risks')) / 100) }}</i></div>
+        @endif
 
     </li>
 
@@ -43,6 +46,7 @@ View Policy
         <div style="float:right; "><i> {{  $policy['c_price'] }}</i></div>
 
     </li>
+
 
     <li class="list-group-item">
         <div style="float:left;"><strong>Policy Period: </strong> </div>
@@ -53,7 +57,11 @@ View Policy
         @csrf
         <input type="hidden" name="userid"  value="{{ Session::get('user')['id'] }}">
         <input type="hidden" name="policyid"  value="{{ $policy['id'] }}">
+        @if(  $policy['policytype'] == 'Car' || $policy['policytype'] == 'Bike')
+        <input type="hidden" name="p_price"  value="{{ $policy['p_price'] * ((100+Session::get('risk')) / 100) }}">
+        @else
         <input type="hidden" name="p_price"  value="{{ $policy['p_price'] * ((100+Session::get('risks')) / 100) }}">
+        @endif
         <input type="hidden" name="c_price"  value="{{  $policy['c_price'] }}">
         <li class="list-group-item">
 

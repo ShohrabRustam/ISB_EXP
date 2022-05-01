@@ -168,11 +168,13 @@ class AdminController extends Controller
             if (Session::get('user')['type'] === 'admin') {
                 Session::forget('user');
                 Session::forget('risks');
+                Session::forget('vrisks');
                 return redirect('adminLogin');
             }
             if (Session::get('user')['type'] === 'superadmin') {
                 Session::forget('user');
                 Session::forget('risks');
+                Session::forget('vrisks');
                 return redirect('/superadminLogin');
             }
         } else {
