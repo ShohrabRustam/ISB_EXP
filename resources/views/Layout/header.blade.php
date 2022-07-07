@@ -8,6 +8,9 @@
         <span class="bar"></span>
     </div>
     <ul class="nav no-search">
+        @if(Session::has('user'))
+        <div style="margin-right:20px;"><li class="nav-item"><a href="{{ URL::to('/dashboard') }}" style="color: navy; font-weight:bold; font-size:large">Dashboard</a></li></div>
+        @endif
         <li class="nav-item"><a href="{{URL::to('/') }}">Home</a></li>
         <li class="nav-item"><a href="{{URL::to('/about') }}">About</a></li>
         <li class="nav-item"><a href="{{URL::to('/contact') }}">Contact</a></li>

@@ -237,17 +237,23 @@ class UserController extends Controller
         if (Session::has('user')) {
             if (Session::get('user')['type'] === 'user') {
                 Session::forget('user');
+                Session::forget('risk');
                 Session::forget('risks');
+                Session::forget('vrisks');
                 return redirect('login');
             }
             if (Session::get('user')['type'] === 'admin') {
                 Session::forget('user');
+                Session::forget('risk');
                 Session::forget('risks');
+                Session::forget('vrisks');
                 return redirect('adminLogin');
             }
             if (Session::get('user')['type'] === 'superadmin') {
                 Session::forget('user');
+                Session::forget('risk');
                 Session::forget('risks');
+                Session::forget('vrisks');
                 return redirect('superadminLogin');
             } else {
                 return redirect('login');
@@ -255,34 +261,4 @@ class UserController extends Controller
         }
     }
 
-    public function _riskanalysis(){
-        if (Session::has('user')) {
-        return view('Users.riskAnalysis');
-        }else{
-            return redirect('login');
-        }
-    }
-
-    public function _risk(Request $request){
-
-        $timestamp = strtotime($request->dob);
-        $year=date('Y',$timestamp);
-        $currentYear = date("Y");
-        $age = $currentYear - $year;
-        $risk = $request->smoke  + $request->drink + $request->health + $request->cancer + $request->blood ;
-        if($age<=0 || $age>=70){
-            return back()->with('fail', 'You are not eligible due to your age !!');
-        }
-        else if ($risk>100){
-            return back()->with('fail','You are not eligable for the policy ');
-        }
-        else if($age>0 && $age <=22){
-            $risk = $risk;
-        }
-        else{
-            $risk = $risk + ($age - 22);
-        }
-        $request->session()->put('risks', $risk);
-        return redirect('/');
-    }
 }

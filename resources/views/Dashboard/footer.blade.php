@@ -1,3 +1,8 @@
-<footer id="footer">
-    <p>Made with <img id="Layer_1" src="https://heptagonindustries.com.ng/wp-content/uploads/2022/04/heart.png">  <span>LiquidTime ©2022 </span></p>
-</footer>
+<footer class="bg-light text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-dark" href="{{ URL::to('/dashboard') }}" >www.mPolicy.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>

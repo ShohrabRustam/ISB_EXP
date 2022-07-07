@@ -48,6 +48,8 @@ class SuperAdminController extends Controller
     {
         Session::forget('user');
         Session::forget('risks');
+        Session::forget('risk');
+        Session::forget('vrisks');
         return redirect('/superadminLogin');
     }
 

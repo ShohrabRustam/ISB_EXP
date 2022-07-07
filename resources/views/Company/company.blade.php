@@ -3,6 +3,7 @@
     Add Company
 @endsection
 @section('section')
+@include('Company.style')
     <div class="container py-3">
         <div class="row justify-content-center">
             <div class="col-md-6">

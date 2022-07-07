@@ -1,0 +1,95 @@
+
+let welcome;
+let date = new Date();
+let hour = date.getHours();
+let minute = date.getMinutes();
+let second = date.getSeconds();
+if (minute < 10) {
+  minute = "0" + minute;
+}
+if (second < 10) {
+  second = "0" + second;
+}
+if (hour>=6 && hour<12) {
+  welcome = "Morning";
+} else if (hour == 12 && minute<1) {
+  welcome = "Noon";
+}
+else if (hour >= 12 && hour <= 16) {
+    welcome = "Afternoon";
+  }else if(hour>17 && hour>22){
+    welcome = "Evening";
+  }
+else {
+  welcome = "Night";
+}
+
+// function display(val){
+//   if(event.key === 'Enter'){
+// 		if((val.value).length > 0){
+// 			  console.log(val.value)
+//     	customAlert(`searching for: "${val.value}"`, 3500)
+// 		}else{
+// 			customWarn('Type something',1500)
+// 		}
+//   }
+// }
+
+
+// $(document).ready(function(){
+// 	const body = document.querySelector('body');
+// 	const toggled = document.getElementById('toggle');
+// 	const media = window.matchMedia("(min-width:700px)")
+
+// toggled.onclick = function(){
+// 		body.classList.toggle('light');
+// 	toggled.classList.toggle('active')
+// }
+// 	if(media.matches){
+// 		console.log(true)
+// 		$('#dashboard').mouseenter(function(){
+// 		this.innerHTML = `good
+//     ${welcome}`;
+// 	});
+// 	$('#dashboard').mouseleave(function(){
+// 		this.innerHTML = "DASHBOARD";
+// 	});
+// 	$('#kleenpulse').mouseenter(function(){
+// 		this.innerHTML = "welcome";
+// 	});
+// 	$('#kleenpulse').mouseleave(function(){
+// 		this.innerHTML = "MPOLICY";
+// 	});
+// 	}else{
+// 		console.log(false)
+// 	}
+
+$('#dashboard').mouseenter(function(){
+        this.innerHTML = `Good
+    ${welcome}`;
+    });
+    $('#dashboard').mouseleave(function(){
+        this.innerHTML = "SUPERADMIN DASHBOARD";
+})
+
+// function customAlert(msg, duration) {
+// 	var styler = document.createElement("div");
+// 	styler.className = 'dis-wrap'
+
+// 	styler.innerHTML = "<h1 class='display'>" + msg + "</h1>";
+// 	setTimeout(function () {
+// 		styler.parentNode.removeChild(styler);
+// 	}, duration);
+// 	document.body.appendChild(styler);
+// }
+
+// function customWarn(msg, duration) {
+// 	var styler = document.createElement("div");
+// 	styler.className = 'dis-warn'
+
+// 	styler.innerHTML = "<h1 class='display'>" + msg + "</h1>";
+// 	setTimeout(function () {
+// 		styler.parentNode.removeChild(styler);
+// 	}, duration);
+// 	document.body.appendChild(styler);
+// }

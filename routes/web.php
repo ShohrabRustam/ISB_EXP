@@ -8,7 +8,10 @@ use App\Http\Controllers\HelpController;
 use App\Http\Controllers\InsuranceController;
 use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserDashboard;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\VichelesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +29,8 @@ Route::get('/contact', [UserController::class, '_contact']);
 Route::get('/about', [UserController::class, '_about']);
 Route::get('/help', [UserController::class, '_help']);
 Route::post('/help', [HelpController::class, '_help'])->name('help');
+Route::get('/helpMessage', [HelpController::class, '_helpMessage'])->name('help');
+
 Route::get('/signup', [UserController::class, '_signupPage'])->middleware('userLogin');
 Route::post('/signup', [UserController::class, '_signup'])->name('signup');
 Route::get('/login', [UserController::class, '_loginPage'])->middleware('userLogin');
@@ -41,8 +46,11 @@ Route::get('/lifeInsurance', [InsuranceController::class, '_life']);
 Route::get('/healthInsurance', [InsuranceController::class, '_health']);
 Route::get('/carInsurance', [InsuranceController::class, '_car']);
 Route::get('/bikeInsurance', [InsuranceController::class, '_bike']);
-Route::get('/riskAnalysis',[UserController::class,'_riskanalysis'])->name('riskAnalysis');
-Route::post('/riskAnalysis',[UserController::class,'_risk'])->name('riskAnalysis');
+Route::get('/riskAnalysis',[VichelesController::class,'_riskanalysis'])->name('riskAnalysis');
+Route::post('/riskAnalysis',[VichelesController::class,'_risk'])->name('riskAnalysis');
+Route::get('/riskAnalysisVehicle',[VichelesController::class,'_riskAnalysisVehicle'])->name('riskAnalysisVehicle');
+Route::post('/riskAnalysisVehicle',[VichelesController::class,'_riskvehicle'])->name('riskAnalysisVehicle');
+
 
 Route::get('/companies', [CompanyController::class, '_companies']);
 Route::get('/addCompany', [CompanyController::class, '_addCompany']);
@@ -71,6 +79,8 @@ Route::get('/adminsList', [AdminController::class, '_admins']);
 Route::get('/deleteAdmin/{id?}', [AdminController::class, '_delete']);
 Route::get('/updateAdmin/{id?}', [AdminController::class, '_updatePage'])->name('updateAdmin');
 Route::post('/updateAdmin/{id?}', [AdminController::class, '_update'])->name('updateAdmin');
+Route::post('/acceptRequest', [AdminController::class, '_acceptRequest'])->name('acceptRequest');
+Route::get('/rejectRequest/{id?}', [AdminController::class, '_rejectRequest'])->name('rejectRequest');
 
 
 Route::get('/superadminHome', [SuperAdminController::class, '_homeSuperadmin']);
@@ -94,20 +104,21 @@ Route::get('/resetpassword/{token?}', [UserController::class, '_showResetForm'])
 
 Route::post('/resetpassword', [UserController::class, '_resetForm'])->name('resetpassword');
 
-Route::get('/dashboard',function(){
-    return view('dashboard');
-});
-Route::get('detail',function(){
-    return view('Users.demo');
-});
+Route::get('/dashboard',[UserDashboard::class,'_home']);
+Route::get('/healthPolicy',[UserDashboard::class,'_health']);
+Route::get('/lifePolicy',[UserDashboard::class,'_life']);
+Route::get('/bikePolicy',[UserDashboard::class,'_bike']);
+Route::get('/carPolicy',[UserDashboard::class,'_car']);
 
 
+Route::get('viewPolicy/{id?}',[CompanyPolicyController::class,'_viewPolicy'])->name('viewPolicy');
 
 
+// Route::get('/transaction',function(){
+//     return view('transaction.transaction');
+// });
 
-
-
-
+Route::post('purchasePolicy',[PurchaseController::class,'_purchasePolicy']);
 
 
 Route::fallback(function () {
